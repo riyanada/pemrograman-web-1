@@ -6,3 +6,5 @@
 
 -  <b>Pertemuan 5 : </b><a href="https://tugas-saia.smkn2cmi.sch.id/pertemuan-5/" target="_blank">tugas-saia.smkn2cmi.sch.id</a> <br>
 -  <b>Pertemuan 6 :</b> <a href="https://tugas-saia.smkn2cmi.sch.id/pertemuan-6/" target="_blank">tugas-saia.smkn2cmi.sch.id</a>
+-  <b>Pertemuan 8 :</b> <a href="https://tugas-saia.smkn2cmi.sch.id/pertemuan-8/" target="_blank">tugas-saia.smkn2cmi.sch.id</a>
+-  <b>Pertemuan UTS :</b> <a href="https://tugas-saia.smkn2cmi.sch.id/pertemuan-9/" target="_blank">tugas-saia.smkn2cmi.sch.id</a>
