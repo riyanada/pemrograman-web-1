@@ -27,16 +27,25 @@
                                     <th>No</th>
                                     <th>Nama Lengkap</th>
                                     <th>NIM</th>
-                                    <th>Program Studi</th>
                                     <th>Priode</th>
+                                    <th>Program Studi</th>
+                                    <th>Kelas</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include "config.php";
-                                $query = "SELECT a.nama_lengkap, a.nim, b.program_studi, a.periode 
-                                            FROM mahasiswa a 
-                                            INNER JOIN program_studi b ON a.program_studi = b.ps_id";
+                                $query = "SELECT
+                                                a.nama_lengkap,
+                                                a.nim,
+                                                b.program_studi,
+                                                a.periode,
+                                                d.nama_kelas
+                                            FROM
+                                                mahasiswa a
+                                                INNER JOIN program_studi b ON a.program_studi = b.ps_id
+                                                INNER JOIN kelas_mahasiswa c ON a.id = c.mahasiswa_id
+                                                INNER JOIN kelas d on c.kelas_id = d.id_kelas";
                                 $result = mysqli_query($conn, $query);
                                 $id = 1;
                                 foreach ($result as $row) {
@@ -52,10 +61,13 @@
                                             <?= $row['nim'] ?>
                                         </td>
                                         <td>
+                                            <?= $row['periode'] ?>
+                                        </td>
+                                        <td>
                                             <?= $row['program_studi'] ?>
                                         </td>
                                         <td>
-                                            <?= $row['periode'] ?>
+                                            <?= $row['nama_kelas'] ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -65,8 +77,9 @@
                                     <th>No</th>
                                     <th>Nama Lengkap</th>
                                     <th>NIM</th>
-                                    <th>Program Studi</th>
                                     <th>Priode</th>
+                                    <th>Program Studi</th>
+                                    <th>Kelas</th>
                                 </tr>
                             </tfoot>
                         </table>
