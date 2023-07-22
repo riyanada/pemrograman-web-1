@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+if (isset($_COOKIE['login']) && isset($_COOKIE['key'])) {
+    if ($_COOKIE['login'] == 'true') {
+        $_SESSION['login'] = true;
+        $_SESSION['username'] = $_COOKIE['key'];
+    }
+}
+
+if (isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,6 +53,9 @@ session_start();
                             <br>
                             <input class="form-control border-0" type="password" name="passwd"
                                 placeholder="Type Your Password">
+                            <input type="checkbox" name="remember" id="rememberMe"> <label for="rememberMe"
+                                class="text-light">Remember me</label>
+                            <br>
                             <br>
                             <button class="btn btn-primary btn-sm border-0" type="submit" name="submit">Sign In</button>
                         </form>

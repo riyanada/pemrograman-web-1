@@ -43,6 +43,10 @@ if (!$email) {
             $_SESSION['error'] = 'Password tidak boleh kosong!';
             $passwordValid = false;
         } elseif ($user['email'] == $email && $user['password'] == $password) {
+            if (isset($_REQUEST['remember'])) {
+                setcookie('login', true, time() + 60);
+                setcookie('key', $_REQUEST['username'], time() + 60);
+            }
             $_SESSION['success'] = "Login berhasil...";
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
