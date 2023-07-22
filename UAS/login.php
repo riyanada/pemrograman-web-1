@@ -2,10 +2,10 @@
 include './config/config.php';
 include './config/database.php';
 
-if (isset($_COOKIE['login']) && isset($_COOKIE['key'])) {
+if (isset($_COOKIE['login']) && isset($_COOKIE['FYGZe7aEHGzLzvb4'])) {
     if ($_COOKIE['login'] == 'true') {
         $_SESSION['login'] = true;
-        $_SESSION['username'] = $_COOKIE['key'];
+        $_SESSION['username'] = $_COOKIE['FYGZe7aEHGzLzvb4'];
     }
 }
 
